@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MVP Example</string>
+    <string name="instructions">Enter a book name to find out who wrote the book. </string>
+    <string name="button_text">Search Books</string>
+    <string name="input_hint">Book Title</string>
+    <string name="no_results">No Results</string>
+    <string name="loading">Loading . . . sabaryaaa</string>
+    <string name="no_search_term">Please enter a search term</string>
+    <string name="no_network">Please check your network connection and try again.</string>
+    <string name="implementing_mvp_pattern_in_this_application">Implementing MVP Pattern in this Application.</string>
+    <string name="get_next_quote">GET NEXT QUOTE</string>
+    <string name="books_apis">Books APIs</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
