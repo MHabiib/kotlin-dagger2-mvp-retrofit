@@ -41,7 +41,7 @@ class MyActivity : Activity(),MainContract.View {
         val bookInput = findViewById<TextView>(R.id.bookInput)
         val button: Button = findViewById(R.id.searchButton)
 
-     //   recycler_view.adapter = ItemAdapter(this)
+       // recycler_view.adapter = ItemAdapter(this)
 
             button.setOnClickListener{
             presenter.onButtonClick(bookInput.text.toString())
@@ -58,7 +58,7 @@ class MyActivity : Activity(),MainContract.View {
 
     override fun setBook(string: String) {
         textView!!.text = string
-       // recycler_view.adapter = string
+//        recycler_view.adapter = string
     }
 
 

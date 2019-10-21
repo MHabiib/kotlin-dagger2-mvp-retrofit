@@ -38,7 +38,7 @@ class MainPresenterImpl @Inject constructor(): MainContract.Presenter{
             .getBook(input)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .doOnTerminate { Log.i("RX ","On Terminate")}
+            //.doOnTerminate { Log.i("RX ","On Terminate")}
             .subscribe(
                 { listResult-> onFinished(listResult
                     .items?.get(0)?.volumeInfo?.title.toString())},

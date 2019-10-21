@@ -3,73 +3,73 @@ package com.example
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class VolumeInfo {
+class VolumeInfo (
 
     @SerializedName("title")
     @Expose
-    var title: String? = null
+    var title: String? = null,
     @SerializedName("subtitle")
     @Expose
-    var subtitle: String? = null
+    var subtitle: String? = null,
     @SerializedName("authors")
     @Expose
-    var authors: List<String>? = null
+    var authors: List<String>? = null,
     @SerializedName("publisher")
     @Expose
-    var publisher: String? = null
+    var publisher: String? = null,
     @SerializedName("publishedDate")
     @Expose
-    var publishedDate: String? = null
+    var publishedDate: String? = null,
     @SerializedName("description")
     @Expose
-    var description: String? = null
+    var description: String? = null,
     @SerializedName("industryIdentifiers")
     @Expose
-    var industryIdentifiers: List<IndustryIdentifier>? = null
+    var industryIdentifiers: List<IndustryIdentifier>? = null,
     @SerializedName("readingModes")
     @Expose
-    var readingModes: ReadingModes? = null
+    var readingModes: ReadingModes? = null,
     @SerializedName("pageCount")
     @Expose
-    var pageCount: Int? = null
+    var pageCount: Int? = null,
     @SerializedName("printType")
     @Expose
-    var printType: String? = null
+    var printType: String? = null,
     @SerializedName("categories")
     @Expose
-    var categories: List<String>? = null
+    var categories: List<String>? = null,
     @SerializedName("maturityRating")
     @Expose
-    var maturityRating: String? = null
+    var maturityRating: String? = null,
     @SerializedName("allowAnonLogging")
     @Expose
-    var allowAnonLogging: Boolean? = null
+    var allowAnonLogging: Boolean? = null,
     @SerializedName("contentVersion")
     @Expose
-    var contentVersion: String? = null
+    var contentVersion: String? = null,
     @SerializedName("imageLinks")
     @Expose
-    var imageLinks: ImageLinks? = null
+    var imageLinks: ImageLinks? = null,
     @SerializedName("language")
     @Expose
-    var language: String? = null
+    var language: String? = null,
     @SerializedName("previewLink")
     @Expose
-    var previewLink: String? = null
+    var previewLink: String? = null,
     @SerializedName("infoLink")
     @Expose
-    var infoLink: String? = null
+    var infoLink: String? = null,
     @SerializedName("canonicalVolumeLink")
     @Expose
-    var canonicalVolumeLink: String? = null
+    var canonicalVolumeLink: String? = null,
     @SerializedName("averageRating")
     @Expose
-    var averageRating: Double? = null
+    var averageRating: Double? = null,
     @SerializedName("ratingsCount")
     @Expose
-    var ratingsCount: Int? = null
+    var ratingsCount: Int? = null,
     @SerializedName("panelizationSummary")
     @Expose
     var panelizationSummary: PanelizationSummary? = null
 
-}
+)
