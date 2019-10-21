@@ -4,6 +4,7 @@ import com.future.mvpexample.dagger.network.UnsafeOkHttpClient
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.AbstractCoroutine
@@ -15,11 +16,11 @@ import javax.inject.Singleton
 @Module
 class NetModule (var baseUrl: String) {
 
-    @Singleton
+/*    @Singleton
     @Provides
     fun provideCoroutine(): CoroutineCallAdapterFactory {
         return provideCoroutine()
-    }
+    }*/
 
     @Singleton
     @Provides
@@ -40,7 +41,7 @@ class NetModule (var baseUrl: String) {
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(UnsafeOkHttpClient.getUnsafeOkHttpClient())
             .baseUrl(baseUrl)
             .build()

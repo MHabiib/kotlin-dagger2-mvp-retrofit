@@ -1,16 +1,22 @@
 package com.future.mvpexample.dagger
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.BookRes
 import com.future.mvpexample.R
 import com.future.mvpexample.dagger.di.interfaces.BookApiInterfaces
 import com.future.mvpexample.dagger.di.presenter.MainContract
 import com.future.mvpexample.dagger.di.presenter.MainPresenterImpl
+import kotlinx.android.synthetic.main.activity_book.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,40 +29,24 @@ class MyActivity : Activity(),MainContract.View {
     lateinit var presenter: MainPresenterImpl
     private var textView: TextView? = null
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book)
 
+        recycler_view.layoutManager = LinearLayoutManager(this)
         (application as MyApp).getBookComponent()?.inject(this)
+
         presenter.onAttach(this)
-        textView = findViewById(R.id.titleText)
+        textView = findViewById(R.id.txtPostTitle)
         val bookInput = findViewById<TextView>(R.id.bookInput)
         val button: Button = findViewById(R.id.searchButton)
 
-        button.setOnClickListener{
+     //   recycler_view.adapter = ItemAdapter(this)
+
+            button.setOnClickListener{
             presenter.onButtonClick(bookInput.text.toString())
         }
 
-            val call = bookApiInterfaces.getBook("asd")
-
-            call.enqueue(object : Callback<BookRes> {
-                override fun onResponse(
-                    call: Call<BookRes>,
-                    response: Response<BookRes>)
-                {
-                    if(response.isSuccessful) {
-                        Log.i("HASILNYAAA", response.body().toString())
-                        Toast.makeText(this@MyActivity, "Data Retrieved",
-                            Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-                override fun onFailure(call: Call<BookRes>, t: Throwable) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                }
-            })
 
 
     }
@@ -68,6 +58,8 @@ class MyActivity : Activity(),MainContract.View {
 
     override fun setBook(string: String) {
         textView!!.text = string
+       // recycler_view.adapter = string
     }
+
 
 }

@@ -29,11 +29,6 @@ class MyApp : Application() {
             .build()
     }
 
-
-    fun getAppComponent(): AppComponent? {
-        return mAppComponent
-    }
-
     fun getBookComponent(): BookComponent? {
         return mBookComponent
     }
